@@ -1,17 +1,27 @@
 import React from 'react';
-import { Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full border-t border-white/10 bg-black py-8 px-6 relative z-10">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-xs text-white/30 font-medium">
-                © 2024 Lead Fix AI. All rights reserved.
+    <footer className="bg-[#0A0A0A] border-t border-[#1E1E1E] py-16">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            <div>
+                <a href="#" className="text-[#F2F2F2] font-serif text-2xl tracking-tighter hover:text-gold transition-colors duration-300">
+                    MODULHOUSE
+                </a>
+                <p className="text-[#444] text-xs mt-2 font-light">
+                    Spring, TX • Serving Greater Houston
+                </p>
             </div>
-            <div className="flex gap-6">
-                <a href="#" className="text-white/30 hover:text-white transition-colors"><Twitter className="w-4 h-4" /></a>
-                <a href="#" className="text-white/30 hover:text-white transition-colors"><Instagram className="w-4 h-4" /></a>
-                <a href="#" className="text-white/30 hover:text-white transition-colors"><Linkedin className="w-4 h-4" /></a>
+
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+                <a href="#" className="text-xs uppercase tracking-widest text-[#666] hover:text-[#F2F2F2] transition-colors">Instagram</a>
+                <a href="#" className="text-xs uppercase tracking-widest text-[#666] hover:text-[#F2F2F2] transition-colors">LinkedIn</a>
+                <a href="#" className="text-xs uppercase tracking-widest text-[#666] hover:text-[#F2F2F2] transition-colors">Imprint</a>
+                <a href="#" className="text-xs uppercase tracking-widest text-[#666] hover:text-[#F2F2F2] transition-colors">Privacy</a>
+            </div>
+
+            <div className="text-[#333] text-xs">
+                © 2024 ModulHouse Premium.
             </div>
         </div>
     </footer>

@@ -1,28 +1,24 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ServicesSection from './components/FeaturedListings'; // Repurposed
-import MeetLisaSection from './components/AboutSection'; // Repurposed
-import Testimonials from './components/Testimonials';
-import PricingSection from './components/SearchSection'; // Repurposed
-import ContactSection from './components/Neighborhoods'; // Repurposed
+import PhilosophySection from './components/AboutSection';
+import ModelsSection from './components/FeaturedListings';
+import SpecsSection from './components/SpecsSection';
+import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import ThreeBackground from './components/ThreeBackground';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-void text-white selection:bg-brand/30 selection:text-brand font-sans">
-      <ThreeBackground />
+    <div className="bg-background text-textMain font-sans">
       <Navbar />
-      <main className="relative z-10 w-full flex flex-col items-center">
+      <main className="w-full">
         <Hero />
-        <ServicesSection />
-        <MeetLisaSection />
-        <Testimonials />
-        <PricingSection />
+        <PhilosophySection />
+        <ModelsSection />
+        <SpecsSection />
         <ContactSection />
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

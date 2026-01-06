@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lead Fix AI | Voice Agents for Contractors</title>
+    <title>ModulHouse Premium | Architectural Living</title>
     
-    <!-- Fonts -->
+    <!-- Fonts: Playfair Display (Serif) & Manrope (Sans-Serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
@@ -20,21 +20,18 @@
         theme: {
           extend: {
             colors: {
-              void: '#050505',
-              brand: '#F95500',
-              brandDark: '#CC4400',
-              glass: 'rgba(255, 255, 255, 0.03)',
-              border: 'rgba(255, 255, 255, 0.08)',
+              background: '#121212',
+              surface: '#1E1E1E',
+              gold: '#D4AF37',
+              textMain: '#B0B0B0',
+              textLight: '#F2F2F2',
             },
             fontFamily: {
-              sans: ['Inter', 'system-ui', 'sans-serif'],
-              display: ['Syne', 'sans-serif'],
+              sans: ['Manrope', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
             },
             letterSpacing: {
-              tightest: '-0.05em',
-            },
-            backgroundImage: {
-              'glow-gradient': 'radial-gradient(circle at center, rgba(249, 85, 0, 0.15) 0%, transparent 70%)',
+              widest: '0.2em',
             }
           }
         }
@@ -43,60 +40,75 @@
     
     <style>
       body {
-        background-color: #050505;
-        color: #eeeeee;
+        background-color: #121212;
+        color: #B0B0B0;
         margin: 0;
+        font-family: 'Manrope', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
       
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+        color: #F2F2F2;
+      }
+
+      /* Custom selection color */
+      ::selection {
+        background: #D4AF37;
+        color: #121212;
+      }
+
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
-        width: 5px;
+        width: 6px;
       }
       ::-webkit-scrollbar-track {
-        background: #050505;
+        background: #121212;
       }
       ::-webkit-scrollbar-thumb {
         background: #333;
-        border-radius: 4px;
+        border-radius: 3px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #F95500;
+        background: #D4AF37;
       }
 
-      /* Audio Wave Animation */
-      .bar {
-        width: 4px;
-        background: #F95500;
-        border-radius: 2px;
-        animation: sound 0ms -800ms linear infinite alternate;
+      /* Button Hover Transition Override */
+      .btn-gold {
+        background: linear-gradient(135deg, #C5A059 0%, #E6C883 100%);
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
       }
-      @keyframes sound {
-        0% { opacity: .35; height: 6px; }
-        100% { opacity: 1; height: 28px; }
+      .btn-gold:hover {
+        background: #F2F2F2;
+        color: #121212;
       }
-      .bar:nth-child(1)  { animation-duration: 474ms; }
-      .bar:nth-child(2)  { animation-duration: 433ms; }
-      .bar:nth-child(3)  { animation-duration: 407ms; }
-      .bar:nth-child(4)  { animation-duration: 458ms; }
-      .bar:nth-child(5)  { animation-duration: 400ms; }
+
+      /* Form Autofill Fix for Dark Mode */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      textarea:-webkit-autofill,
+      textarea:-webkit-autofill:hover,
+      textarea:-webkit-autofill:focus {
+        -webkit-text-fill-color: #F2F2F2;
+        -webkit-box-shadow: 0 0 0px 1000px #121212 inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
     </style>
-    
-    <script type="importmap">
+  <script type="importmap">
 {
   "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "three": "https://esm.sh/three@^0.182.0",
     "three/": "https://esm.sh/three@^0.182.0/"
   }
 }
 </script>
-  </head>
+</head>
   <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
